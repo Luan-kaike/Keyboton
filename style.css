@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+
+:root{
+  --main-color: #1a1932;
+  --second-color: #fff;
+  --third-color: #db3ffd;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-family: Silkscreen;
+  color: var(--second-color);
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--main-color);
+
+  width: 500px;
+  height: 250px;
+  padding: 10px;
+
+  border: 5px solid var(--third-color);
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+h1{
+  font-weight: 700;
+}
+
+ul{
+  display: flex;
+  list-style: none;
+}
+
+li{
+  cursor: pointer;
+}
+
+li > svg{
+  height: calc(16px*2);
+}
+
+li > svg > path{
+  stroke: #0ff;
+}
+
+li[data-active='true'] > svg > path{
+  stroke: var(--third-color);
+}
+
+li[data-active='false'] > svg > path{
+  stroke: var(--second-color);
+}
+
+label > input{
+  position: relative;
+  width: 50vw;
+  height: 70%;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  margin: 5px;
+  border-bottom: 2px solid var(--third-color);
+}
+
+label > p{
+  user-select: none;
+}
+
+label > input:focus{
+  outline: none;
+}
+
+div{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+div > button{
+  position: relative;
+  width: 50%;
+  padding-block: 5px;
+  padding-inline: 10px;
+  height: 100%;
+  margin-inline: 5px;
+  border: 2px solid var(--third-color);
+  background-color: transparent;
+}
+
+div > button::after{
+  content: attr(id);
+  position: absolute;
+  left: 5px;
+  transform: translateY(-70%);
+  background-color: var(--main-color);
+  top: 0;
+  font-weight: 500;
+}
+
+p#msg{
+  height: 15px;
+  color: var(--third-color);
+  font-weight: 500;
+  font-size: 15px;
+}
